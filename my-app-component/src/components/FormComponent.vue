@@ -1,13 +1,15 @@
 <template>
+  <div>
     <h1>{{ message }}</h1>
+  </div>
 </template>
 
 <script>
 export default {
-    name:"ListData",
+    name:"FormComponent",
     data(){
         return{
-            message:"แสดงรายชื่อพนักงาน"
+            message:"แบบฟอร์มบันทึกข้อมูลพนักงาน"
         }
     }
 }
