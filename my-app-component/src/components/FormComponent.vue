@@ -8,6 +8,25 @@
       <label for="emp-salary">เงินเดือน</label>
       <input type="number" v-model="employee.salary"/>
     </div>
+    <div class="form-control">
+      <label for="department">ตำแหน่งงาน</label>
+      <select v-model="employee.department">
+        <option value="ฝ่ายการตลาด">ฝ่ายการตลาด</option>
+        <option value="ฝ่ายการเงิน">ฝ่ายการเงิน</option>
+        <option value="ฝ่ายขาย">ฝ่ายขาย</option>
+      </select>
+    </div>
+    <div class="form-control">
+      <h2>เพศ</h2>
+      <div>
+        <input type="radio" value="ชาย" v-model="employee.gender"/>
+        <label for="gender-name">เพศชาย</label>
+      </div>
+      <div>
+        <input type="radio" value="หญิง" v-model="employee.gender"/>
+        <label for="gender-name">เพศหญิง</label>
+      </div>
+    </div>
     <div>
       <button type="submit">บันทึกข้อมูล</button>
     </div>
@@ -22,7 +41,9 @@ export default {
         return{
           employee:{
             name:"",
-            salary:0
+            salary:0,
+            department:"่ฝ่ายการตลาด",
+            gender:""
           }
         }
     }
@@ -44,7 +65,7 @@ form{
 label{
   font-weight: bold;
 }
-input{
+input,select{
   display: block;
   width: 100%;
   font:inherit;
@@ -58,5 +79,17 @@ button{
   padding: 0.5rem 1rem;
   margin-top: 10px;
   border-radius: 15px;
+}
+input[type="radio"]{
+  display: inline-block;
+  width: auto;
+  margin-right: 1rem;
+}
+input[type="radio"]+label{
+  font-weight: normal;
+}
+h2{
+  font-size: 1rem;
+  margin: 0.5rem 0;
 }
 </style>
