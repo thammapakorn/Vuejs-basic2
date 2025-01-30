@@ -2,18 +2,24 @@
   <header>
     <h1>ระบบจัดการข้อมูลพนักงาน</h1>
   </header>
+  <FormComponent/>
+  
   <section class="employee-content"> 
     <h2>ข้อมูลพนักงาน</h2>
     <ListData/>
   </section>
+
+    
 </template>
 
 <script>
+import FormComponent from './components/FormComponent.vue';
 import ListData from './components/ListData.vue';
 export default{
   name:"App",
   components:{
-    ListData
+    ListData,
+    FormComponent
   }
 }
 </script>
