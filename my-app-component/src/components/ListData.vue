@@ -6,7 +6,6 @@
         <PersonComponent/>
         <PersonComponent/>
         <PersonComponent/>
-        
     </div>
 </template>
 
