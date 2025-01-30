@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>{{ message }}</h1>
+    <h1>ชื่อ : {{ name }} เงินเดือน : {{ salary }}</h1>
   </div>
 </template>
 
@@ -11,7 +11,9 @@ export default {
         return{
             message:"ข้อมูลพนักงาน"
         }
-    }
+    },
+    // รับค่า props name
+    props:["name","salary"]
 }
 </script>
 

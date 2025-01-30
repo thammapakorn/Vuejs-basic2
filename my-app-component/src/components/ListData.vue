@@ -1,11 +1,10 @@
 <template>
     <div>
-        <h1>{{ message }}</h1>
-        <!-- ถ้าอยากเรียกใช้หลายๆอันก็ เรียกใช้บ่อยๆนะ -->
-        <PersonComponent/>
-        <PersonComponent/>
-        <PersonComponent/>
-        <PersonComponent/>
+        <ul>
+            <li>
+                
+            </li>
+        </ul>
     </div>
 </template>
 
@@ -17,11 +16,8 @@ export default {
     components:{
         PersonComponent
     },
-    data(){
-        return{
-            message:"แสดงรายชื่อพนักงานทุกคน"
-        }
-    }
+    //รับค่า props
+    props:["employees"]
   }
 
 </script>
