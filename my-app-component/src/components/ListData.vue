@@ -1,9 +1,8 @@
 <template>
     <div>
         <ul>
-            <li>
-                
-            </li>
+            <PersonComponent v-for="(item,index) in employees" 
+            :key="index" :name="item.name" :salary="item.salary" />
         </ul>
     </div>
 </template>
