@@ -1,5 +1,5 @@
 <template>
-  <li>
+  <CardComponent>
     <h1>{{ name }}</h1>
     <button @click="showDescription(id)">ดูรายละเอียด</button> &nbsp;
     <button @click="deleteEmployees(id)">ลบข้อมูล</button>
@@ -8,12 +8,17 @@
         <p>เงินเดือน : {{ salary }} บาท ตำแหน่งงาน : {{ department }}</p>
       </div>
     </transition>
-  </li>
+  </CardComponent>
 </template>
 
 <script>
+import CardComponent from './CardComponent.vue';
+
 export default {
     name:"PersonComponent",
+    components:{
+        CardComponent
+    },
     // รับค่า props name
     props:{
       id:{
@@ -49,15 +54,7 @@ export default {
 </script>
 
 <style scoped>
-  li{
-    margin:1rem 0;
-    font-size: 1.25rem;
-    font-weight: bold;
-    background-color: rgb(240, 159, 134);
-    padding: 0.5rem;
-    color: #1f1f1f;
-    border-radius: 25px;
-}
+
 button{
   font:inherit;
   cursor: pointer;
