@@ -1,14 +1,15 @@
 <template>
-    <div>
         <ul>
             <PersonComponent 
-            v-for="(item,index) in employees" 
-            :key="index" 
+            v-for="(item) in employees" 
+            :id="item.id"
+            :key="item.id" 
             :name="item.name" 
-            :salary="item.salary" 
+            :salary="item.salary"
+            :department="item.department"
+            :isVisible="item.isVisible"
             />
         </ul>
-    </div>
 </template>
 
 <script>
@@ -19,12 +20,26 @@ export default {
     components:{
         PersonComponent
     },
-    //รับค่า props employees จาก App component
-    props:["employees"]
+    data(){
+    return{
+      employees:[
+        { id:1,name:"เปรม ตั้งใจ",salary:30000,department:"IT Support",isVisible:false},
+        { id:2,name:"จูน เก่งมาก",salary:60000,department:"Sales Admin",isVisible:false},
+        { id:3,name:"ก้อง เก่งมาก",salary:40000,department:"Programmer",isVisible:false},
+        { id:4,name:"โจ๊ก หล่อ",salary:30000,department:"Programmer",isVisible:false},
+        { id:5,name:"ตุ๊ก ขยัน",salary:50000,department:"SA IT",isVisible:false},
+        { id:6,name:"มิ๊ก กี้",department:"HR",isVisible:false}
+      ]
+    }
   }
+}
 
 </script>
 
-<style>
-
+<style scoped>
+ul{
+    list-style: none;
+    margin: 1rem 0;
+    padding: 0;
+}
 </style>
