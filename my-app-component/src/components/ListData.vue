@@ -9,6 +9,7 @@
       :department="item.department"
       :isVisible="item.isVisible"
       @show="toggleVisible"
+      @delete="removeEmployee"
     />
   </ul>
 </template>
@@ -41,9 +42,17 @@ export default {
                 }
                 return item;
             })        
+        },
+        removeEmployee(emp_id){
+            this.employees =this.employees.filter(item=>{
+            //item ที่มี id ไม่ตรงกันกับ id อื่น จะคงสภาพสมาชิกเอาไว้ 
+            //เช่น ได้ emp_id = 3 มา ค่าอื่นที่ไม่ใช่ 3 ก็จะคงสภาพเอาไว้ ถ้าเป้น 3 ก็ลบ
+                return item.id !== emp_id
+                })
+            }
         }
-    }
 }
+
 
 </script>
 

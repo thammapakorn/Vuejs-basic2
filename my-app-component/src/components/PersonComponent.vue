@@ -2,10 +2,12 @@
   <li>
     <h1>{{ name }}</h1>
     <button @click="showDescription(id)">ดูรายละเอียด</button> &nbsp;
-    <button>ลบข้อมูล</button>
-  <div v-show="isVisible">
-    <p>เงินเดือน : {{ salary }} บาท ตำแหน่งงาน : {{ department }}</p>
-  </div>
+    <button @click="deleteEmployees(id)">ลบข้อมูล</button>
+    <transition name="fade">
+      <div v-show="isVisible">
+        <p>เงินเดือน : {{ salary }} บาท ตำแหน่งงาน : {{ department }}</p>
+      </div>
+    </transition>
   </li>
 </template>
 
@@ -38,6 +40,9 @@ export default {
       showDescription(id){
         //ใช้ emit ส่งสัญญานไปหาแม่ event ชื่อ show โดยส่งข้อมูล id ไปด้วย
         this.$emit("show",id);
+      },
+      deleteEmployees(id){
+        this.$emit("delete",id);
       }
     }
 }
