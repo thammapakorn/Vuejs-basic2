@@ -7,13 +7,17 @@
 <script>
 export default {
     name:"PersonComponent",
-    data(){
-        return{
-            message:"ข้อมูลพนักงาน"
-        }
-    },
     // รับค่า props name
-    props:["name","salary"]
+    props:{
+      name:{
+        type:String,
+        required:true
+      },
+      salary:{
+        type:Number,
+        default:15000
+      }
+    }
 }
 </script>
 

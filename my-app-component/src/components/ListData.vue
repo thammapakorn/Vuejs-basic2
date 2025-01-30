@@ -1,8 +1,12 @@
 <template>
     <div>
         <ul>
-            <PersonComponent v-for="(item,index) in employees" 
-            :key="index" :name="item.name" :salary="item.salary" />
+            <PersonComponent 
+            v-for="(item,index) in employees" 
+            :key="index" 
+            :name="item.name" 
+            :salary="item.salary" 
+            />
         </ul>
     </div>
 </template>
@@ -15,7 +19,7 @@ export default {
     components:{
         PersonComponent
     },
-    //รับค่า props
+    //รับค่า props employees จาก App component
     props:["employees"]
   }
 

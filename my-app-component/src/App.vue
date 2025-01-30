@@ -21,7 +21,8 @@ export default{
         {name:"จูน",salary:60000},
         {name:"ก้อง",salary:40000},
         {name:"โจ๊ก",salary:30000},
-        {name:"ตุ๊ก",salary:50000}
+        {name:"ตุ๊ก",salary:50000},
+        {name:"มิ๊ก"}
       ]
     }
   }
