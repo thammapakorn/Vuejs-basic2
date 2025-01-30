@@ -67,4 +67,10 @@ button{
   padding: 0.05rem 1rem;
   box-shadow: 1px 1px 2px rgba(0,0,0,0.26);
 }
+.fade-enter-from{
+  opacity: 0;
+}
+.fade-enter-active{
+  transition: all 0.5s linear;
+}
 </style>
