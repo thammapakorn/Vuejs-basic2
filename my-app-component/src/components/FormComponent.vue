@@ -20,11 +20,26 @@
       <h2>เพศ</h2>
       <div>
         <input type="radio" value="ชาย" v-model="employee.gender"/>
-        <label for="gender-name">เพศชาย</label>
+        <label for="gender-name">ชาย</label>
       </div>
       <div>
         <input type="radio" value="หญิง" v-model="employee.gender"/>
-        <label for="gender-name">เพศหญิง</label>
+        <label for="gender-name">หญิง</label>
+      </div>
+    </div>
+    <div class="form-control">
+      <h2>ทักษะด้านภาษา</h2>
+      <div>
+        <input type="checkbox" value="อังกฤษ" v-model="employee.skill"/>
+        <label for="skill">ภาษาอังกฤษ</label>
+      </div>
+      <div>
+        <input type="checkbox" value="จีน" v-model="employee.skill"/>
+        <label for="skill">ภาษาจีน</label>
+      </div>
+      <div>
+        <input type="checkbox" value="ญี่ปุ่น" v-model="employee.skill"/>
+        <label for="skill">ภาษาญี่ปุ่น</label>
       </div>
     </div>
     <div>
@@ -43,7 +58,8 @@ export default {
             name:"",
             salary:0,
             department:"่ฝ่ายการตลาด",
-            gender:""
+            gender:"",
+            skill:[]
           }
         }
     }
@@ -80,12 +96,13 @@ button{
   margin-top: 10px;
   border-radius: 15px;
 }
-input[type="radio"]{
+input[type="radio"],input[type="checkbox"]{
   display: inline-block;
   width: auto;
   margin-right: 1rem;
 }
-input[type="radio"]+label{
+input[type="radio"]+label,
+input[type="checkbox"]+label{
   font-weight: normal;
 }
 h2{
